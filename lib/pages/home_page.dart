@@ -7,7 +7,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _isLogin = false;
+  bool _isLogin = true;
 
   @override
   Widget build(BuildContext context) {
@@ -58,23 +58,33 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 150,
               ),
-              FadeAnimation(1.5,Container(
+
+              _isLogin?
+              Container(
                 height: 55,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: _isLogin ? Colors.yellow[900] : Colors.red,
+                  color: Colors.yellow[900]
                 ),
                 child: Center(
-                    child: _isLogin
-                        ? Text(
+                    child: Text(
                       "Start",
                       style: TextStyle(color: Colors.white, fontSize: 18),
-                    )
-                        : Text(
+                    )),
+              ):
+
+              Container(
+                height: 55,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    color: Colors.red
+                ),
+                child: Center(
+                    child: Text(
                       "Google+",
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     )),
-              ),),
+              ),
 
               SizedBox(
                 height: 10,
